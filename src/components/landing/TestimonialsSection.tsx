@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import testimonial1 from "../../assets/social-proof/testimonial-1.png";
+import testimonial2 from "../../assets/social-proof/testimonial-2.png";
+import testimonial3 from "../../assets/social-proof/testimonial-3.png";
 
 const testimonials = [
   {
@@ -34,6 +37,8 @@ const testimonials = [
   },
 ];
 
+const socialProofImages = [testimonial1, testimonial2, testimonial3];
+
 const TestimonialsSection = () => {
   return (
     <section className="section-padding bg-card">
@@ -52,6 +57,26 @@ const TestimonialsSection = () => {
             Cada história é única — mas a constância na oração muda o interior.
           </p>
         </motion.div>
+
+        {/* Imagens de Prova Social */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {socialProofImages.map((img, index) => (
+            <motion.div
+              key={`img-${index}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-background rounded-xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <img 
+                src={img} 
+                alt={`Depoimento ${index + 1}`} 
+                className="w-full h-auto object-contain"
+              />
+            </motion.div>
+          ))}
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
