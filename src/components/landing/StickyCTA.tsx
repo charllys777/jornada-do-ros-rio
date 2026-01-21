@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUp } from "lucide-react";
 
 const StickyCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,11 +14,8 @@ const StickyCTA = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToOffer = () => {
-    const offerSection = document.getElementById("oferta");
-    if (offerSection) {
-      offerSection.scrollIntoView({ behavior: "smooth" });
-    }
+  const goToPayment = () => {
+    window.location.href = "https://pay.wiapy.com/v3nzAFRWJt";
   };
 
   return (
@@ -34,11 +30,10 @@ const StickyCTA = () => {
         >
           <div className="bg-card/95 backdrop-blur-sm border-t border-border px-4 py-3 shadow-lg">
             <button
-              onClick={scrollToOffer}
-              className="btn-primary w-full flex items-center justify-center gap-2"
+              onClick={goToPayment}
+              className="btn-gold w-full flex items-center justify-center gap-2"
             >
               <span>Finalizar Inscrição</span>
-              <ArrowUp className="w-4 h-4" />
             </button>
             <p className="text-center text-xs text-muted-foreground mt-2">
               Por apenas R$10 • Acesso imediato
