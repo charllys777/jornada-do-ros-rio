@@ -101,8 +101,8 @@ const OfferSection = () => {
 
               {/* CTA */}
               <a
-                href="#"
-                className="btn-primary w-full block text-center text-xl py-5"
+                href="https://pay.wiapy.com/v3nzAFRWJt"
+                className="btn-gold w-full block text-center text-xl py-5"
               >
                 Finalizar Inscrição
               </a>

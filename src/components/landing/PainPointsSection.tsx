@@ -54,12 +54,12 @@ const PainPointsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-elevated flex flex-col items-start gap-4 transition-all duration-300 hover:border-accent border border-transparent"
+              className="bg-background rounded-xl p-6 flex flex-col items-start gap-4 transition-all duration-300 border-2 border-accent/40 hover:border-accent shadow-md"
             >
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <point.icon className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                <point.icon className="w-6 h-6 text-accent" />
               </div>
-              <p className="text-body text-foreground">{point.text}</p>
+              <p className="font-serif text-lg font-medium text-foreground leading-relaxed">{point.text}</p>
             </motion.div>
           ))}
         </div>

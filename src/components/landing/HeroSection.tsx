@@ -72,8 +72,8 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <a
-                href="#oferta"
-                className="btn-primary inline-block text-center"
+                href="https://pay.wiapy.com/v3nzAFRWJt"
+                className="btn-gold inline-block text-center"
               >
                 Quero participar do Desafio
               </a>

@@ -74,7 +74,7 @@ const WhatYouGetSection = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
               className="mt-8"
             >
-              <a href="#oferta" className="btn-primary inline-block">
+              <a href="https://pay.wiapy.com/v3nzAFRWJt" className="btn-gold inline-block">
                 Quero receber o material
               </a>
             </motion.div>
