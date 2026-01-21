@@ -23,7 +23,7 @@ const HeroSection = () => {
       </div>
 
       <div className="container relative z-10 py-16 md:py-24">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center md:text-left md:mx-0">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
