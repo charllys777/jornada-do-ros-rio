@@ -20,31 +20,38 @@ const salesData = [
   { name: "Cristina", city: "Florianópolis", state: "SC", time: "13 minutos" },
 ];
 
+// Intervalos progressivos em milissegundos conforme solicitado
+const progressIntervals = [5000, 10000, 20000, 30000, 45000];
+
 const SalesNotification = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const showNextNotification = () => {
+    let timeoutId: NodeJS.Timeout;
+    let step = 0;
+
+    const showNotification = () => {
       setIsVisible(true);
       
-      // Esconde após 3 segundos (conforme solicitado)
+      // Fica visível por 3 segundos
       setTimeout(() => {
         setIsVisible(false);
-        // Prepara o próximo índice
         setCurrentIndex((prev) => (prev + 1) % salesData.length);
+        
+        // Define o próximo intervalo
+        const nextInterval = progressIntervals[step] || 60000; // 60s após os passos iniciais
+        step++;
+        
+        timeoutId = setTimeout(showNotification, nextInterval);
       }, 3000);
     };
 
-    // Inicia o ciclo: mostra a cada 15 segundos (conforme solicitado)
-    const interval = setInterval(showNextNotification, 15000);
-    
-    // Mostra a primeira após 3 segundos do carregamento
-    const initialTimeout = setTimeout(showNextNotification, 3000);
+    // Inicia a primeira notificação após 5 segundos
+    timeoutId = setTimeout(showNotification, 5000);
 
     return () => {
-      clearInterval(interval);
-      clearTimeout(initialTimeout);
+      clearTimeout(timeoutId);
     };
   }, []);
 
