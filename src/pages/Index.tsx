@@ -9,6 +9,7 @@ import GuaranteeSection from "@/components/landing/GuaranteeSection";
 import FAQSection from "@/components/landing/FAQSection";
 import Footer from "@/components/landing/Footer";
 import StickyCTA from "@/components/landing/StickyCTA";
+import SalesNotification from "@/components/landing/SalesNotification";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <FAQSection />
       <Footer />
       <StickyCTA />
+      <SalesNotification />
     </main>
   );
 };
