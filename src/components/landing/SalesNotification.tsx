@@ -28,13 +28,18 @@ const SalesNotification = () => {
     const showNextNotification = () => {
       setIsVisible(true);
       
+      // Esconde após 3 segundos (conforme solicitado)
       setTimeout(() => {
         setIsVisible(false);
+        // Prepara o próximo índice
         setCurrentIndex((prev) => (prev + 1) % salesData.length);
-      }, 5000);
+      }, 3000);
     };
 
-    const interval = setInterval(showNextNotification, 10000);
+    // Inicia o ciclo: mostra a cada 15 segundos (conforme solicitado)
+    const interval = setInterval(showNextNotification, 15000);
+    
+    // Mostra a primeira após 3 segundos do carregamento
     const initialTimeout = setTimeout(showNextNotification, 3000);
 
     return () => {
